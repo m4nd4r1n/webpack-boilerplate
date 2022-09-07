@@ -1,0 +1,32 @@
+$red: #fa5252;
+$blue: #339af0;
+$green: #40c057;
+
+@mixin square($size) {
+  $calculated: 2rem * $size;
+  width: $calculated;
+  height: $calculated;
+}
+
+.wrapper {
+  display: flex;
+  .box {
+    cursor: pointer;
+    transition: all 0.2s;
+    &.red {
+      background-color: $red;
+      @include square(1);
+    }
+    &.blue {
+      background-color: $blue;
+      @include square(2);
+    }
+    &.green {
+      background-color: $green;
+      @include square(3);
+    }
+    &:hover {
+      filter: brightness(1.25);
+    }
+  }
+}
